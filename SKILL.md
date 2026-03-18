@@ -35,7 +35,12 @@ Read `references/pipeline.md` for the full 5-phase pipeline with agent prompts.
 ## Modes
 
 - **Quick** (~5 min): 2 agents, no verification phase. Trigger: "quick research"
-- **Standard** (~15 min): 3-4 agents + verification. Default.
-- **Deep** (~30 min): 6-8 sub-queries, full verification. Trigger: "deep research"
+- **Standard** (~15 min): 3-4 agents + verification + longread. Default.
+- **Deep** (~30 min): 6-8 sub-queries, full verification + longread. Trigger: "deep research"
+
+## Output
+
+- `report.md` — executive summary (STEP table + key findings, ~2500 words)
+- `report_longread.md` — detailed analysis with source excerpts, adversarial debate, data tables (~5000-8000 words)
 
 Full pipeline, agent prompts, output format: `references/pipeline.md`

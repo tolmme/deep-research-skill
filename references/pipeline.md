@@ -640,7 +640,79 @@ Write the full report following these rules:
 
 ### Step 4.3: Save Report
 
-Save the complete report to `<output_dir>/report.md`.
+Save the executive report to `<output_dir>/report.md`.
+
+### Step 4.4: Write Longread (if depth = "standard" or "deep")
+
+After the summary report, generate a detailed longread at `<output_dir>/report_longread.md`.
+
+The longread differs from the summary:
+
+1. **Full source excerpts:** Include 2-3 paragraph quotes from key sources, not just one-line claims. Show the reader the original text that supports each finding.
+
+2. **Narrative structure per section:** Each STEP section becomes a mini-essay (800-1500 words) with:
+   - Opening: why this factor matters for the specific business question
+   - Evidence layer: data points with full citations and context
+   - Adversarial debate inline: "Optimist perspective: [X]. However, Pessimist found: [Y]. Fact-Checker assessment: [Z]."
+   - Cross-references: how this factor connects to other STEP dimensions
+   - Implications: specific, actionable conclusions for the business
+
+3. **Data tables:** Consolidate numbers into tables with source + year + confidence level. Example:
+   ```
+   | Metric | Value | Year | Source | Confidence |
+   |--------|-------|------|--------|------------|
+   ```
+
+4. **Contradictions section expanded:** For each contested claim, present full arguments from both sides with source excerpts, not just a one-liner.
+
+5. **Signals & monitoring:** For each major finding, specify what signal to watch, where to find it, and how often to check.
+
+**Longread template:**
+
+```markdown
+# <Title> — Deep Analysis
+
+## How to Read This Report
+<brief guide: confidence markers, citation format, structure>
+
+## <STEP Section 1: e.g., Social Factors>
+
+### Context: Why This Matters
+<1-2 paragraphs framing the section for the specific business question>
+
+### Finding 1: <claim>
+<2-3 paragraphs with full source excerpts, data tables, cross-references>
+
+**The Debate:**
+- Optimist: <what supports this>
+- Pessimist: <what contradicts or weakens this>
+- Verdict: <final assessment with confidence>
+
+### Finding 2: <claim>
+...
+
+### Section Summary & Implications
+<what this means for the business, specific actions>
+
+## <STEP Section 2>
+...
+
+## Cross-Cutting Themes
+<patterns that span multiple STEP dimensions>
+
+## Strategic Implications
+<integrated analysis: what the combined STEP picture means>
+
+## Monitoring Dashboard
+| Signal | Source | Frequency | Current Value | Threshold |
+|--------|--------|-----------|---------------|-----------|
+
+## Full Source Appendix
+<all sources with extended metadata: URL, title, date, credibility, excerpt>
+```
+
+**Target length:** 4000-8000 words depending on depth mode.
+**Language:** Same as report.md.
 
 ### Step 4.4: Report Progress
 
