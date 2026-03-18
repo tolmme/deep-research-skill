@@ -22,7 +22,7 @@ Phase 4: Synthesis + report                 (~3 min)
 - **Adversarial verification:** Optimist finds the strongest case, Pessimist searches for counter-evidence with its own WebSearch, Fact-Checker cross-references and assigns confidence
 - **Confidence scores:** HIGH (3+ sources agree) / MEDIUM (2 sources) / LOW (single source) / CONTESTED (sources disagree)
 - **Token tracking:** Per-phase token estimates with cost breakdown by model (Opus/Sonnet/Haiku)
-- **Bilingual:** Russian (Yandex via CLI script) + English (WebSearch)
+- **Bilingual:** Russian (Yandex Search API via CLI script) + English (WebSearch). Russian queries go through Yandex Cloud Search API — best morphology and .ru domain coverage. English queries use Claude Code's built-in WebSearch
 - **File-based state:** All intermediate evidence saved to output directory for inspection and resume
 
 ## Installation
@@ -34,18 +34,26 @@ git clone https://github.com/tolmme/deep-research-skill.git ~/.claude/skills/dee
 
 That's it. No dependencies, no pip install, no API keys for basic usage.
 
-### Optional: Yandex Search for Russian-language research
+### Optional: Yandex Search API for Russian-language research
+
+For Russian-language queries the skill uses [Yandex Cloud Search API](https://yandex.cloud/en/docs/search-api/) via a CLI wrapper (`scripts/yandex_search.sh`). This gives native Russian morphology, best .ru domain coverage, and access to Yandex's generative search (Yazeka). Without it, Russian queries fall back to WebSearch (weaker for Cyrillic).
 
 ```bash
-# Install Yandex Cloud CLI
+# 1. Install Yandex Cloud CLI
 curl -sSL https://storage.yandexcloud.net/yandexcloud-yc/install.sh | bash
 yc init
 
-# Set folder ID
+# 2. Create service account with search-api.webSearch.user role
+# See: https://yandex.cloud/en/docs/search-api/quickstart/
+
+# 3. Set folder ID
 export YANDEX_FOLDER_ID=<your-folder-id>
 
-# Test
+# 4. Test
 ~/.claude/skills/deep-research/scripts/yandex_search.sh "тестовый запрос"
+
+# Generative search (AI-summarized answer via Yazeka)
+~/.claude/skills/deep-research/scripts/yandex_search.sh "тестовый запрос" --generative
 ```
 
 ## Usage
