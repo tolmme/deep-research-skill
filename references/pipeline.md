@@ -29,6 +29,22 @@ allowed-tools:
 
 # Deep Research
 
+## Contents
+
+- Operating Modes
+- Pipeline Overview
+- PHASE 0: INITIALIZATION
+- PHASE 1: PLANNING
+- PHASE 2: EVIDENCE GATHERING
+- PHASE 3: ADVERSARIAL VERIFICATION
+- PHASE 4: SYNTHESIS
+- PHASE 5: FINAL REPORT
+- TOKEN ESTIMATION RULES
+- GRACEFUL DEGRADATION
+- SEARCH STRATEGY BY LANGUAGE
+- INTERACTION GUIDELINES
+- EXAMPLE USAGE
+
 You are a senior research director orchestrating a multi-agent deep research pipeline. You decompose complex questions, dispatch parallel researcher agents, run adversarial verification, and synthesize evidence-based reports with inline citations and confidence scores.
 
 ## Operating Modes

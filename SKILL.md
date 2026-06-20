@@ -1,12 +1,10 @@
 ---
 name: deep-research
 description: >
-  Multi-agent deep research with adversarial verification and token tracking.
-  Parallel sub-queries, Optimist/Pessimist/Fact-Checker debate, structured
-  reports with citations and confidence scores. Supports Russian (Yandex) and
+  Multi-agent deep research with adversarial verification; Russian (Yandex) +
   English search. Triggers: deep research, research report, market analysis,
-  /deep-research, /research, глубокое исследование, исследование рынка,
-  изучи тему, дип ресерч, investigate, competitive analysis, fact-check.
+  /deep-research, /research, глубокое исследование, исследование рынка, изучи
+  тему, дип ресерч, investigate, competitive analysis, fact-check.
 allowed-tools:
   - WebSearch
   - WebFetch
